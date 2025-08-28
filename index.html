@@ -10,6 +10,9 @@
 <body>
     <script>
 
+        let computerScore = 0;
+        let humanScore = 0;
+        
         function getComputerChoice() {
             let computerChoice = Math.floor(Math.random() * 3);
             if (computerChoice == 0) {
@@ -25,10 +28,18 @@
             return userInput;
         }
 
+        function playRound(computerChoice, humanChoice){
+            
+        }
+
+        
+
         let computerChoice = getComputerChoice();
         let humanChoice = getHumanChoice(prompt("Rock, Paper, Scissor"));
 
-        
+        playRound(computerChoice, humanChoice);
+
+
     </script>
 </body>
 
