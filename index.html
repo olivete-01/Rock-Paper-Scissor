@@ -24,19 +24,58 @@
             }
         }
 
-        function getHumanChoice(userInput) {  
+        function getHumanChoice(userInput) {
             return userInput;
         }
 
-        function playRound(computerChoice, humanChoice){
-            
+        function playRound(computerChoice, humanChoice) {
+            switch (computerChoice) {
+                case "rock":
+                    if (humanChoice == "rock") {
+                        computerScore++;
+                        humanScore++;
+                    } else if (humanChoice == "paper") {
+                        humanScore++;
+                    } else {
+                        computerScore++;
+                    }
+                    break;
+                case "paper":
+                    if (humanChoice == "paper") {
+                        computerScore++;
+                        humanScore++;
+                    } else if (humanChoice == "scissor") {
+                        humanScore++;
+                    } else {
+                        computerScore++;
+                    }
+                    break;
+                case "scissor":
+                    if (humanChoice == "scissor") {
+                        computerScore++;
+                        humanScore++;
+                    } else if (humanChoice == "rock") {
+                        humanScore++;
+                    } else {
+                        computerScore++;
+                    }
+            }
+            console.log(`Player: ${humanChoice} Computer: ${computerChoice}`);
         }
 
-        let computerChoice = getComputerChoice();
-        let humanChoice = getHumanChoice(prompt("Rock, Paper, Scissor")).toLowerCase();
 
-        console.log(humanChoice);
-        
+        function playGame() {
+            let computerChoice = getComputerChoice();
+            let humanChoice = getHumanChoice(prompt("Rock, Paper, Scissor")).toLowerCase();
+            playRound(computerChoice, humanChoice);
+            console.log(`Player Score: ${humanScore} Computer Score: ${computerScore}`);
+        }
+
+        playGame();
+        playGame();
+        playGame();
+        playGame();
+        playGame();
 
     </script>
 </body>
