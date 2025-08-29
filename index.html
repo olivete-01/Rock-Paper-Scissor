@@ -77,6 +77,14 @@
         playGame();
         playGame();
 
+        if (computerScore == humanScore) {
+            console.log("Draw!");
+        } else if (computerScore > humanScore) {
+            console.log("Computer Wins!");
+        } else {
+            console.log("Player Wins!");
+        }
+
     </script>
 </body>
 
